@@ -97,5 +97,7 @@ export const google = async (req, res) => {
         .cookie("access_token", token, { httpOnly: true })
         .json(rest);
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
