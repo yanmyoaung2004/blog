@@ -28,7 +28,7 @@ export default function CommentSection({ postId }) {
           userId: currentUser._id,
         }),
       });
-      const data = res.json();
+      const data = await res.json();
       if (res.ok) {
         setComment("");
         setCommentError(null);
@@ -42,7 +42,7 @@ export default function CommentSection({ postId }) {
   useEffect(() => {
     const getComments = async () => {
       try {
-        const res = await fetch(`/api/comment/getpostcomments/${postId}`);
+        const res = await fetch(`/api/comment/getPostComments/${postId}`);
         if (res.ok) {
           const data = await res.json();
           setComments(data);
@@ -60,26 +60,34 @@ export default function CommentSection({ postId }) {
         navigate("/sign-in");
         return;
       }
-      const res = await fetch(`/api/comment/likecomment/${commentId}`, {
+      const res = await fetch(`/api/comment/likeComment/${commentId}`, {
         method: "PUT",
       });
       if (res.ok) {
         const data = await res.json();
         setComments(
-          comments.map((comment) => {
+          comments.map((comment) =>
             comment._id === commentId
               ? {
                   ...comment,
                   likes: data.likes,
                   numberOfLikes: data.likes.length,
                 }
-              : comment;
-          })
+              : comment
+          )
         );
       }
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  const handleEdit = async (comment, editedContent) => {
+    setComments(
+      comments.map((c) =>
+        c._id === comment._id ? { ...c, content: editedContent } : c
+      )
+    );
   };
 
   return (
@@ -141,7 +149,12 @@ export default function CommentSection({ postId }) {
           </div>
 
           {comments.map((comment) => (
-            <Comment key={comment._id} comment={comment} onLike={handleLike} />
+            <Comment
+              key={comment._id}
+              comment={comment}
+              onLike={handleLike}
+              onEdit={handleEdit}
+            />
           ))}
         </>
       )}
