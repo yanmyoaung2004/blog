@@ -92,7 +92,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                 size={"sm"}
                 outline
                 gradientDuoTone={"purpleToBlue"}
-                onClick={() => isEditing(false)}
+                onClick={() => setIsEditing(false)}
               >
                 Cancel
               </Button>
