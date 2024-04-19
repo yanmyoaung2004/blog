@@ -111,6 +111,11 @@ export default function Signup() {
               Sign In
             </Link>
           </div>
+          <div className="flex justify-center items-center text-sm mt-3">
+            <Link to={"/forgot-password"} className="text-blue-500">
+              Forgot Password?
+            </Link>
+          </div>
           {errorMessage && (
             <Alert className="mt-5" color={"failure"}>
               {errorMessage}

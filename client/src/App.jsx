@@ -14,6 +14,9 @@ import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./components/PostPage";
 import ScrollToTop from "./components/ScrollToTop";
 import Search from "./pages/Search";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetSession from "./components/ResetSession";
+import ResetPassword from "./pages/ResetPassword";
 
 export default function App() {
   return (
@@ -24,6 +27,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<Search />} />
         <Route element={<PrivateRoute />}>
@@ -32,6 +36,9 @@ export default function App() {
         <Route element={<OnlyAdminPrivateRoute />}>
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:postId" element={<UpdatePost />} />
+        </Route>
+        <Route element={<ResetSession />}>
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
         <Route path="/projects" element={<Projects />} />
         <Route path="/post/:postSlug" element={<PostPage />} />
