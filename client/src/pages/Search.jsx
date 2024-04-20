@@ -10,10 +10,13 @@ export default function Search() {
     category: "uncategorized",
   });
 
+  console.log(sidebarData);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
+
   const location = useLocation();
+
   const navigate = useNavigate();
 
   useEffect(() => {

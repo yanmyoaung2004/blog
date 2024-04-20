@@ -10,9 +10,8 @@ import {
 
 export default function Signin() {
   const [email, setEmail] = useState();
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
   const [showEmailSent, setShowEmailSent] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -55,8 +54,8 @@ export default function Signin() {
               </span>
               Blog
             </Link>
-            <p className="text-sm mt-5">
-              You can recovery your account by follwing the procss...
+            <p className="text-md mt-5">
+              You can recovery your account by follwing the process{" "}
             </p>
           </div>
           {/* right side */}
@@ -97,7 +96,7 @@ export default function Signin() {
         <div className="max-w-2xl mx-auto p-3 text-center">
           <div>
             <h1 className="text-3xl font-semibold text-center mb-7">
-              Password Reset Email: Action Required
+              Password Reset Email
             </h1>
             <div className="text-lg  text-gray-500 flex flex-col gap-6">
               <p>
