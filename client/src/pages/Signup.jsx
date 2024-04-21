@@ -105,7 +105,7 @@ export default function Signup() {
             </Button>
             <OAuth />
           </form>
-          <div className="flex gap-2 text-sm mt-5">
+          <div className="flex gap-2 text-sm mt-5 justify-center items-center">
             <span>Have an account?</span>
             <Link to={"/sign-in"} className="text-blue-500">
               Sign In
