@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Star Rating</title>
+    <style>
+      .rating-star {
+        font-size: 40px;
+        color: lightgray;
+        cursor: pointer;
+      }
+
+      .rating-star.filled {
+        color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Rate this:</h3>
+    <div id="star-container">
+      <span class="rating-star" data-value="1">&#9733;</span>
+      <span class="rating-star" data-value="2">&#9733;</span>
+      <span class="rating-star" data-value="3">&#9733;</span>
+      <span class="rating-star" data-value="4">&#9733;</span>
+      <span class="rating-star" data-value="5">&#9733;</span>
+    </div>
+
+    <p>Selected rating: <span id="rating-value">0</span></p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const stars = document.querySelectorAll(".rating-star");
+        const ratingValue = document.getElementById("rating-value");
+
+        stars.forEach((star) => {
+          star.addEventListener("click", function () {
+            const value = this.getAttribute("data-value");
+            ratingValue.textContent = value;
+            fillStars(value);
+          });
+        });
+
+        function fillStars(value) {
+          stars.forEach((star) => {
+            if (parseInt(star.getAttribute("data-value")) <= value) {
+              star.classList.add("filled");
+            } else {
+              star.classList.remove("filled");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

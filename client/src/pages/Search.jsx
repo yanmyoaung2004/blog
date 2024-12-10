@@ -10,7 +10,6 @@ export default function Search() {
     category: "uncategorized",
   });
 
-  console.log(sidebarData);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -135,9 +134,10 @@ export default function Search() {
               <option value="reactjs">React.js</option>
               <option value="nextjs">Next.js</option>
               <option value="javascript">JavaScript</option>
+              <option value="laravel">Laravel</option>
             </Select>
           </div>
-          <Button type="submit" outline gradientDuoTone="purpleToPink">
+          <Button type="submit" outline gradientDuoTone="purpleToBlue">
             Apply Filters
           </Button>
         </form>
@@ -146,7 +146,7 @@ export default function Search() {
         <h1 className="text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5 ">
           Posts results:
         </h1>
-        <div className="p-7 flex flex-wrap gap-4">
+        <div className="p-7 flex flex-wrap gap-5">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}

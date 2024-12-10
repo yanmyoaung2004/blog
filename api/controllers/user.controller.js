@@ -5,10 +5,6 @@ import Token from "../models/token.model.js";
 import { sendEmail } from "../utils/sendEmail.js";
 import crypto from "crypto";
 
-export const test = (req, res) => {
-  res.json({ message: "API is running" });
-};
-
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.userId) {
     return next(errorHandler(403, "You are not allowed to update this user"));

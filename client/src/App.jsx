@@ -4,7 +4,6 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
-import Projects from "./pages/Projects";
 import Header from "./components/Header";
 import FooterCom from "./components/Footer";
 import PrivateRoute from "./components/PrivateRoute";
@@ -40,7 +39,6 @@ export default function App() {
         <Route element={<ResetSession />}>
           <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
-        <Route path="/projects" element={<Projects />} />
         <Route path="/post/:postSlug" element={<PostPage />} />
       </Routes>
       <FooterCom />

@@ -8,12 +8,13 @@ export default function CallToAction() {
         <p className="text-gray-500 my-2">
           Checkout these resources with 100 Javascript Projects
         </p>
-        <Button
+        {/* <Button
           className="rounded-tl-xl rounded-bl-none"
           gradientDuoTone={"purpleToPink"}
-        >
+        > */}
+        <Button className="rounded-tl-xl rounded-bl-none bg-gradient-to-r from-blue-600 to-green-600 text-white">
           <a
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/results?search_query=javascript"
             target="_blank"
             rel="noopener noreferrer"
           >

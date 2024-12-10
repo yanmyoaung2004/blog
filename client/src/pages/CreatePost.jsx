@@ -103,6 +103,7 @@ export default function CreatePost() {
             <option value="javascript">JavaScript</option>
             <option value="reactjs">React.js</option>
             <option value="nextjs">Next.js</option>
+            <option value="laravel">Laravel</option>
           </Select>
         </div>
         <div className="flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3">
@@ -150,7 +151,10 @@ export default function CreatePost() {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type="submit" gradientDuoTone={"purpleToPink"}>
+        <Button
+          type="submit"
+          className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white"
+        >
           Publish
         </Button>
         {publishError && (
